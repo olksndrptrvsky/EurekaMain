@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.chel.lab2.entities.Race" table="races" schema="horserace">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="dateTime">
+            <column name="dateTime" sql-type="datetime"/>
+        </property>
+        <property name="place">
+            <column name="place" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="distance">
+            <column name="distance" sql-type="int(11)"/>
+        </property>
+        <property name="winner">
+            <column name="winner" sql-type="varchar(64)" length="64"/>
+        </property>
+    </class>
+</hibernate-mapping>

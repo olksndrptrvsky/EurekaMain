@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.chel.lab2.entities.Rider" table="riders" schema="horserace">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="fullName">
+            <column name="fullName" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="horseBreed">
+            <column name="horseBreed" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="winsCount">
+            <column name="winsCount" sql-type="int(11)"/>
+        </property>
+    </class>
+</hibernate-mapping>

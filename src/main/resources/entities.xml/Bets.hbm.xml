@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.chel.lab2.entities.Bet" table="bets" schema="horserace">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="clientId">
+            <column name="clientId" sql-type="int(11)"/>
+        </property>
+        <property name="participantId">
+            <column name="participantId" sql-type="int(11)"/>
+        </property>
+        <property name="sum">
+            <column name="sum" sql-type="double" precision="-1"/>
+        </property>
+        <property name="state">
+            <column name="state" sql-type="varchar(10)" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

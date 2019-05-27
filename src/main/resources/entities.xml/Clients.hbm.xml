@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.chel.lab2.entities.Client" table="clients" schema="horserace">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="login">
+            <column name="login" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="pass">
+            <column name="pass" sql-type="varchar(32)" length="32"/>
+        </property>
+        <property name="name">
+            <column name="name" sql-type="varchar(16)" length="16"/>
+        </property>
+        <property name="account">
+            <column name="account" sql-type="float" precision="-1"/>
+        </property>
+    </class>
+</hibernate-mapping>
