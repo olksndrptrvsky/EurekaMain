@@ -36,7 +36,7 @@ public class Participant {
     }
 
     @Basic
-    @Column(name = "race-id", nullable = false)
+    @Column(name = "race_id", nullable = false)
     public Long getRaceId() {
         return raceId;
     }

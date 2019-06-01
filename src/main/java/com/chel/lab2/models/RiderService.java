@@ -28,8 +28,7 @@ public class RiderService {
         for(Participant participant : participants)
         {
             Optional<Rider> rider = ridersRepo.findById(participant.getRiderId());
-            if(rider.isPresent())
-            riders.add(rider.get());
+            if(rider.isPresent()) riders.add(rider.get());
         }
         return riders;
     }

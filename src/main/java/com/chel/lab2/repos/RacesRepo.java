@@ -7,5 +7,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RacesRepo extends CrudRepository<Race, Long> {
-//    ArrayList<Race> findAll();
 }

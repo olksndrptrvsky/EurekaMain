@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 public class BetData {
     private String riderFullName;
     private String racePlace;
-    private Timestamp raceDateTime;         //STRING
+    private Timestamp raceDateTime;
     private double sum;
     private double coeff;
     private String state;

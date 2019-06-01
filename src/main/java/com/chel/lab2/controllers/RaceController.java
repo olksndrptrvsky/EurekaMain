@@ -18,23 +18,17 @@ public class RaceController {
 
 
     @RequestMapping(value = "/races", method = RequestMethod.GET)
-    public ResponseEntity<Object> getRaces() {
-        Iterable<Race> races = raceService.getAllRaces();
-        return new ResponseEntity<>(new Gson().toJson(races), HttpStatus.OK);
+    public Iterable<Race> getRaces() {
+        return raceService.getAllRaces();
     }
 
     @RequestMapping(value = "/races/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Object> getRace(@PathVariable Integer id) {
-        Race race = raceService.getRaceById(id);
-        return new ResponseEntity<>(new Gson().toJson(race), HttpStatus.OK);
+    public Race getRace(@PathVariable Integer id) {
+        return raceService.getRaceById(id);
     }
 
     @RequestMapping(value = "/races/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Object> deleteRace(@PathVariable Integer id) {
+    public void deleteRace(@PathVariable Integer id) {
         raceService.deleteRaceById(id);
-        return new ResponseEntity<>(new Gson().toJson("Race successfully deleted"), HttpStatus.OK);
     }
-
-
-
 }

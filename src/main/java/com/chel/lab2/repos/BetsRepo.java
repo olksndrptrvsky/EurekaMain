@@ -9,8 +9,5 @@ import java.util.ArrayList;
 
 @Repository
 public interface BetsRepo extends CrudRepository<Bet, Long> {
-//    ArrayList<Race> findAll();
     ArrayList<Bet> findByClientId(Long id);
-
-
 }

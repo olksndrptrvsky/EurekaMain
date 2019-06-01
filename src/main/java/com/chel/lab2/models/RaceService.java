@@ -12,9 +12,6 @@ public class RaceService {
     private RacesRepo racesRepo;
 
     public Iterable<Race> getAllRaces() {
-
-        //System.out.println("1111111111111111111111111111111111111111");
-        System.out.println(racesRepo);
         return racesRepo.findAll();
     }
 

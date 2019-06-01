@@ -1,10 +1,14 @@
 package com.chel.lab2.controllers;
 
+import com.chel.lab2.dto.DTO;
 import com.chel.lab2.entities.Bet;
+import com.chel.lab2.entities.BetData;
 import com.chel.lab2.entities.Client;
 import com.chel.lab2.models.BetService;
 import com.chel.lab2.models.ClientService;
+import com.chel.lab2.security.JwtConfig;
 import com.google.gson.Gson;
+import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,28 +20,8 @@ public class ClientController {
     private ClientService clientService;
 
 
-    @RequestMapping(value = "/checkAuthorisation", method = RequestMethod.POST)
-    public ResponseEntity<Object> checkUser(@RequestBody String body) {
-        Client client = new Gson().fromJson(body, Client.class);
-        client = clientService.checkAuthrisation(client.getLogin(), client.getPass());
-        return new ResponseEntity<>(new Gson().toJson(client), HttpStatus.OK);
+    @RequestMapping(value = "/getClientByToken", method = RequestMethod.GET)
+    public Client getBetsDataForClient(@RequestHeader("token") String token) {
+        return clientService.getClientByToken(token);
     }
-
-//    @RequestMapping(value = "/checkAuthTest", method = RequestMethod.POST)
-//    public ResponseEntity<Object> getBetsForUser(@RequestBody String body) {
-//        Client client = new Gson().fromJson(body, Client.class);
-//        client = clientService.checkAuthrisation(client.getLogin(), client.getPass());
-//        System.out.println(client);
-//        return new ResponseEntity<>(new Gson().toJson(client==null?0: client.getId()), HttpStatus.OK);
-//    }
-
-//    @RequestMapping(value = "/checkAuthTest", method = RequestMethod.POST)
-//    public Client getBetsForUser(@RequestBody String body) {
-//        Client client = new Gson().fromJson(body, Client.class);
-//        client = clientService.checkAuthrisation(client.getLogin(), client.getPass());
-//        System.out.println(client);
-//        return client;
-//    }
-
-
 }

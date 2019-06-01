@@ -20,23 +20,17 @@ public class ParticipantController {
 
 
     @RequestMapping(value = "/participantsForRace/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Object> getParticipantsForRace(@PathVariable Long id) {
-        Iterable<Participant> participants = participantService.getParticipantsForRace(id);
-        return new ResponseEntity<>(new Gson().toJson(participants), HttpStatus.OK);
+    public Iterable<Participant> getParticipantsForRace(@PathVariable Long id) {
+        return participantService.getParticipantsForRace(id);
     }
 
     @RequestMapping(value = "/participants/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Object> getParticipant(@PathVariable Integer id) {
-        Participant participant = participantService.getParticipantById(id);
-        return new ResponseEntity<>(new Gson().toJson(participant), HttpStatus.OK);
+    public Participant getParticipant(@PathVariable Integer id) {
+        return participantService.getParticipantById(id);
     }
 
     @RequestMapping(value = "/participants/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Object> deleteRace(@PathVariable Integer id) {
+    public void deleteRace(@PathVariable Integer id) {
         participantService.deleteParticipantById(id);
-        return new ResponseEntity<>(new Gson().toJson("Race successfully deleted"), HttpStatus.OK);
     }
-
-
-
 }

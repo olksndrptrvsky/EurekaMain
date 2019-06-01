@@ -89,6 +89,17 @@ public class Client {
     }
 
     @Override
+    public String   toString() {
+        return "Client{" +
+                "id=" + id +
+                ", login='" + login + '\'' +
+                ", pass='" + pass + '\'' +
+                ", name='" + name + '\'' +
+                ", account=" + account +
+                '}';
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(id, login, pass, name, account);
     }

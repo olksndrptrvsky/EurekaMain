@@ -35,6 +35,7 @@ public class BetService {
     }
 
     public Iterable<BetData> getBetsDataForClient(Long id) {
+
         ArrayList<BetData> result = new ArrayList<>();
         Iterable<Bet> bets = this.getBetsForClient(id);
 
@@ -42,10 +43,9 @@ public class BetService {
             result.add(new BetData(bet.getSum(), bet.getState()));
             Participant participant = participantService.getParticipantById(bet.getParticipantId());
             result.get(result.size()-1).setCoeff(participant.getCoeff());
-            Rider rider = riderService.getRiderById(participant.getRaceId());
+            Rider rider = riderService.getRiderById(participant.getRiderId());
             result.get(result.size()-1).setRiderFullName(rider.getFullName());
             Race race = raceService.getRaceById(participant.getRaceId());
-            //race.formatDate();
             System.out.println(race.getDateTime());
             result.get(result.size()-1).setRaceDateTime(race.getDateTime());
             result.get(result.size()-1).setRacePlace(race.getPlace());

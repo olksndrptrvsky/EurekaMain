@@ -17,18 +17,13 @@ public class RiderController {
 
 
     @RequestMapping(value = "/ridersForRace/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Object> getRidersForRace(@PathVariable Long id) {
-        Iterable<Rider> riders = riderService.getRidersForRace(id);
-        return new ResponseEntity<>(new Gson().toJson(riders), HttpStatus.OK);
+    public Iterable<Rider> getRidersForRace(@PathVariable Long id) {
+        return riderService.getRidersForRace(id);
     }
 
     @RequestMapping(value = "/riders/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Object> getRiderById(@PathVariable Long id) {
-        return new ResponseEntity<>(new Gson().toJson(riderService.getRiderById(id)), HttpStatus.OK);
+    public Rider getRiderById(@PathVariable Long id) {
+        return riderService.getRiderById(id);
     }
-
-
-
-
 
 }

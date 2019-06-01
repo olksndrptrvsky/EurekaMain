@@ -18,7 +18,6 @@ public class Bet {
     }
 
     public Bet(Long clientId, int participantId, double sum, String state) {
-        //this.id = id;
         this.clientId = clientId;
         this.participantId = participantId;
         this.sum = sum;

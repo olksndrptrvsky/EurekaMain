@@ -19,7 +19,6 @@ public class ParticipantService {
         return participantRepo.findById(id).get();
     }
 
-
     public void deleteParticipantById(long id) {
         participantRepo.deleteById(id);
     }
